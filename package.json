@@ -1,0 +1,28 @@
+{
+  "name": "vite-plugin-mockjs-lite",
+  "version": "1.0.0",
+  "description": "A mock plugin for vite",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linsk1998/vite-plugin-mockjs-lite.git"
+  },
+  "keywords": [
+    "vite",
+    "mock",
+    "mockjs-lite",
+    "plugin"
+  ],
+  "author": "linsk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linsk1998/vite-plugin-mockjs-lite/issues"
+  },
+  "homepage": "https://github.com/linsk1998/vite-plugin-mockjs-lite#readme",
+  "dependencies": {
+    "mockjs-lite": "^0.3.3"
+  }
+}
