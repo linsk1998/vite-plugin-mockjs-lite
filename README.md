@@ -6,8 +6,9 @@ A mock plugin for vite
 import mock from 'vite-plugin-mockjs-lite';
 
 mock({
-	dir: "mock",
-	apiPath: "/api"
+	mockDir: "mock",
+	apiPath: "/api",
+	delay:[300,1000]
 })
 ```
 

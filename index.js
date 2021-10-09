@@ -3,6 +3,7 @@ const fs = require('fs');
 module.exports= function(options={}){
 	var dir=options.mockDir || "mock";
 	var api=options.apiPath || "/api";
+	var delay=options.delay || [0,0];
 	return {
 		name: 'mockjs-lite',
 		configureServer(server) {
@@ -18,11 +19,15 @@ module.exports= function(options={}){
 							resp.statusCode = 500;
 							resp.end(JSON.stringify({
 								code: 500,
-								msg: e.message
+								msg: e.message,
+								message: e.message
 							}));
 						} else {
-							resp.statusCode = 200;
-							resp.end(JSON.stringify(Mock.mock(JSON.parse(data))));
+							var r=(delay[1]-delay[0])*Math.random();
+							setTimeout(function(){
+								resp.statusCode = 200;
+								resp.end(JSON.stringify(Mock.mock(JSON.parse(data))));
+							},delay[0]+r);
 						}
 					});
 				} else {
